@@ -96,13 +96,13 @@
       transition:background .25s ease, transform .2s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
     }
     .nav-cta:hover { background:var(--gold-l); transform:translateY(-2px); box-shadow:0 6px 20px rgba(184,155,114,.3); }
-    #hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    #hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; position:relative; z-index:9600; }
     #hamburger span { display:block; width:22px; height:1.5px; background:white; transition:transform .3s ease, opacity .3s ease; transform-origin:center; }
     #hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(4.5px,4.5px); }
     #hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
     #hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(4.5px,-4.5px); }
     #mobile-menu {
-      position:fixed; inset:0; background:rgba(10,10,10,0.98); z-index:590;
+      position:fixed; inset:0; background:rgba(10,10,10,0.98); z-index:9500;
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.2rem;
       transform:translateX(100%); transition:transform .5s cubic-bezier(.16,1,.3,1);
     }
@@ -735,6 +735,10 @@
       #full-gallery .pf-row { display:contents !important; }
       #full-gallery .pf-cell { height:180px !important; }
       #full-gallery .pf-cell:last-child:nth-child(odd) { grid-column:1 / -1; height:160px !important; }
+      /* Force hero buttons into a single horizontal row */
+      .hero-btns { flex-wrap:nowrap; gap:.45rem; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
+      .hero-btns::-webkit-scrollbar { display:none; }
+      .hero-btns .btn-gold, .hero-btns .btn-ghost { padding:.7rem 1rem; font-size:.57rem; white-space:nowrap; flex-shrink:0; }
     }
     @media (max-width:400px) {
       .vid-grid { grid-template-columns:1fr; }
@@ -941,12 +945,12 @@
 </nav>
 
 <div id="mobile-menu">
-  <a href="#video-work"   onclick="closeMenu()">Portfolio</a>
-  <a href="#pricing"      onclick="closeMenu()">Pricing</a>
-  <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
-  <a href="#about"        onclick="closeMenu()">About</a>
-  <a href="#contact"      onclick="closeMenu()">Contact</a>
-  <a href="tel:4372160426" style="color:var(--gold);font-size:1rem !important;letter-spacing:.04em;">437-216-0426</a>
+  <a href="#video-work"   onclick="mobileNav('#video-work');return false;">Portfolio</a>
+  <a href="#pricing"      onclick="mobileNav('#pricing');return false;">Pricing</a>
+  <a href="#testimonials" onclick="mobileNav('#testimonials');return false;">Testimonials</a>
+  <a href="#about"        onclick="mobileNav('#about');return false;">About</a>
+  <a href="#contact"      onclick="mobileNav('#contact');return false;">Contact</a>
+  <a href="tel:4372160426" onclick="closeMenu();" style="color:var(--gold);font-size:1rem !important;letter-spacing:.04em;">437-216-0426</a>
 </div>
 
 
@@ -975,7 +979,7 @@
       <div class="hero-info-bar" style="animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .72s both;">
         <div class="hero-info-pill"><span class="pill-dot"></span>24hr Turnaround</div>
         <div class="hero-info-pill"><span class="pill-dot"></span>Unlimited Revisions</div>
-        <div class="hero-info-pill"><span class="pill-dot"></span>No Tax Charges</div>
+
         <div class="hero-info-pill highlight"><span class="pill-dot"></span>New Clients: $50 Off First Booking</div>
       </div>
     </div>
@@ -1382,7 +1386,7 @@
         <div class="gold-bar"></div><span class="label">2026 Pricing</span><div class="gold-bar"></div>
       </div>
       <h2 class="section-h2 reveal d1">Transparent Pricing.<br><span>Premium Results.</span></h2>
-      <p class="section-sub reveal d2">All prices in CAD. No GST/HST. Next-day turnaround and unlimited revisions on every service.</p>
+      <p class="section-sub reveal d2">All prices in CAD. Next-day turnaround and unlimited revisions on every service.</p>
     </div>
 
     <div class="promo-banner reveal d2">
@@ -1664,10 +1668,6 @@
       </div>
     </div>
 
-    <div class="pricing-note reveal">
-      <p><strong>Please Note:</strong> Since my business has not yet reached $30,000 in revenue, I am not required to collect GST/HST. <strong>The prices above are the total you will pay, no tax added.</strong> I provide a receipt for your records so you can claim media services as a business expense. Signed, <strong>Ryder Burke</strong></p>
-      <p style="margin-top:.5rem;font-size:.73rem;color:rgba(255,255,255,.2);">Prices subject to change without notice. Updated May 23, 2026.</p>
-    </div>
 
     <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);">
       <a href="https://drive.google.com/file/d/19sdvW7LoYXjWiBhpXfqMqRGjln5E4ZoH/view" target="_blank" rel="noopener"
@@ -1728,10 +1728,6 @@
           <div class="val">
             <div class="val-t">GTA Coverage</div>
             <div class="val-d">Serving all of the Greater Toronto Area and surrounding regions.</div>
-          </div>
-          <div class="val">
-            <div class="val-t">No Tax Charges</div>
-            <div class="val-d">Prices shown are your total, no GST/HST added at checkout.</div>
           </div>
         </div>
       </div>
@@ -1814,7 +1810,6 @@
             <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Shoot booked within 48 to 72 hours</span></div>
             <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Delivered next business day</span></div>
             <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Unlimited revisions, no questions</span></div>
-            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">No GST/HST, receipt provided</span></div>
           </div>
         </div>
 
@@ -1988,6 +1983,10 @@
     document.getElementById('hamburger').classList.remove('open');
     lenis.start();
     document.body.style.overflow = '';
+  }
+  function mobileNav(target) {
+    closeMenu();
+    setTimeout(function() { lenis.scrollTo(target, { duration: 1.0 }); }, 80);
   }
 
   // ─── REVEAL ON SCROLL ──────────────────────────────────────────────────────
