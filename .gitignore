@@ -1,0 +1,37 @@
+# Raw photo archives (not referenced by site)
+All Up Studios Photos/
+Final photots/
+
+# Dev/context files
+Skills/
+index.html.bak
+
+# Large video asset (replaced by CSS animation)
+brand_assets/UpStudios Animation(W: Audio).MOV
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+**/.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
