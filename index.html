@@ -160,9 +160,9 @@
     }
     .hero-info-pill {
       display:inline-flex; align-items:center; gap:.38rem;
-      padding:.34rem .85rem;
-      font-family:'Montserrat',sans-serif; font-size:.52rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
-      border:1px solid rgba(184,155,114,.22); color:rgba(255,255,255,.52);
+      padding:.38rem .92rem;
+      font-family:'Montserrat',sans-serif; font-size:.6rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+      border:1px solid rgba(184,155,114,.22); color:rgba(255,255,255,.6);
       background:rgba(184,155,114,.04);
       backdrop-filter:blur(8px);
     }
@@ -530,7 +530,7 @@
     .pkg-now { font-family:'Montserrat',sans-serif; font-weight:700; color:var(--gold); font-size:.82rem; }
     .pricing-section { margin-bottom:3.5rem; }
     .pricing-section-title { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
-    .pricing-section-title h3 { font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:800; letter-spacing:-.02em; color:white; }
+    .pricing-section-title h3 { font-family:'Montserrat',sans-serif; font-size:1.12rem; font-weight:800; letter-spacing:-.02em; color:white; }
     .ac-table { width:100%; border-collapse:collapse; }
     .ac-table thead th { font-family:'Montserrat',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); padding:.85rem 1rem; text-align:center; border-bottom:1px solid rgba(255,255,255,.07); background:rgba(184,155,114,.02); }
     .ac-table thead th:first-child { text-align:left; }
@@ -542,10 +542,10 @@
     .addon-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
     .addon-group { padding:1.4rem 1.6rem; border:1px solid rgba(255,255,255,.05); background:rgba(255,255,255,.012); transition:border-color .3s, transform .3s cubic-bezier(.16,1,.3,1); }
     .addon-group:hover { border-color:rgba(184,155,114,.14); transform:translateY(-3px); }
-    .addon-group-title { font-family:'Montserrat',sans-serif; font-size:.57rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:.9rem; }
+    .addon-group-title { font-family:'Montserrat',sans-serif; font-size:.63rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:.9rem; }
     .addon-row { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; padding:.42rem 0; border-bottom:1px solid rgba(255,255,255,.04); }
     .addon-row:last-child { border-bottom:none; }
-    .addon-name { font-size:.78rem; color:rgba(255,255,255,.52); line-height:1.4; }
+    .addon-name { font-size:.78rem; color:rgba(255,255,255,.68); font-weight:400; line-height:1.4; }
     .addon-price { font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:700; color:var(--gold); white-space:nowrap; }
     .reels-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
     .reels-box { padding:1.75rem; border:1px solid rgba(255,255,255,.06); background:rgba(255,255,255,.012); }
@@ -667,7 +667,7 @@
     .cinfo-icon { width:36px; height:36px; border:1px solid rgba(184,155,114,.18); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold); transition:background .25s, border-color .25s; }
     .cinfo-item:hover .cinfo-icon { background:rgba(184,155,114,.06); border-color:rgba(184,155,114,.35); }
     .cinfo-label { font-family:'Montserrat',sans-serif; font-size:.55rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:.2rem; }
-    .cinfo-value { font-size:.86rem; color:rgba(255,255,255,.68); text-decoration:none; transition:color .25s; }
+    .cinfo-value { font-size:.93rem; color:rgba(255,255,255,.75); text-decoration:none; transition:color .25s; }
     .cinfo-value:hover { color:var(--gold); }
 
     /* PAGE LOADER */
@@ -927,6 +927,32 @@
     /* TESTIMONIALS - tighter top padding */
     #testimonials { padding:4rem 0 8rem; }
 
+    /* REFERRAL BANNER */
+    .referral-banner { padding:1.6rem 2rem; border:1px solid rgba(184,155,114,.18); background:rgba(184,155,114,.03); margin-bottom:3.5rem; }
+    .referral-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .referral-body { display:flex; align-items:flex-start; gap:1.1rem; }
+    .referral-icon { flex-shrink:0; width:36px; height:36px; border:1px solid rgba(184,155,114,.22); display:flex; align-items:center; justify-content:center; color:var(--gold); margin-top:.1rem; }
+    .referral-eyebrow { font-family:'Montserrat',sans-serif; font-size:.56rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.28rem; }
+    .referral-headline { font-family:'Montserrat',sans-serif; font-size:.92rem; font-weight:700; letter-spacing:-.01em; color:white; margin-bottom:.38rem; }
+    .referral-sub { color:rgba(255,255,255,.38); font-size:.78rem; line-height:1.72; max-width:520px; }
+    @media (max-width:600px) {
+      .referral-banner { padding:1.25rem 1.25rem; }
+      .referral-inner { flex-direction:column; gap:1.1rem; }
+      .referral-inner .btn-ghost { align-self:flex-start; }
+    }
+
+    /* SERVICE CHECKBOX GRID */
+    .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.42rem; }
+    .svc-check { display:flex; align-items:center; gap:.55rem; padding:.55rem .75rem; border:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.018); cursor:pointer; transition:border-color .22s, background .22s; user-select:none; }
+    .svc-check:hover { border-color:rgba(184,155,114,.25); background:rgba(184,155,114,.04); }
+    .svc-check input[type="checkbox"] { appearance:none; -webkit-appearance:none; width:13px; height:13px; min-width:13px; border:1px solid rgba(255,255,255,.22); position:relative; cursor:pointer; background:transparent; transition:border-color .2s, background .2s; }
+    .svc-check input[type="checkbox"]:checked { background:var(--gold); border-color:var(--gold); }
+    .svc-check input[type="checkbox"]:checked::after { content:''; position:absolute; left:3px; top:1px; width:5px; height:7px; border:1.5px solid #0A0A0A; border-top:none; border-left:none; transform:rotate(45deg); }
+    .svc-check:has(input:checked) { border-color:rgba(184,155,114,.32); background:rgba(184,155,114,.06); }
+    .svc-label { font-family:'Montserrat',sans-serif; font-size:.58rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.5); pointer-events:none; line-height:1.3; }
+    .svc-check:has(input:checked) .svc-label { color:var(--gold-l); }
+    @media (max-width:600px) { .svc-grid { grid-template-columns:repeat(2,1fr); } }
+
   </style>
 </head>
 <body>
@@ -949,7 +975,7 @@
   <div class="nav-links">
     <a href="#video-work"   class="nav-link">Portfolio</a>
     <a href="#pricing"      class="nav-link">Pricing</a>
-    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="#testimonials" class="nav-link">Reviews</a>
     <a href="#about"        class="nav-link">About</a>
     <a href="#contact"      class="nav-link">Contact</a>
   </div>
@@ -960,7 +986,7 @@
 <div id="mobile-menu">
   <a href="#video-work"   onclick="mobileNav('#video-work');return false;">Portfolio</a>
   <a href="#pricing"      onclick="mobileNav('#pricing');return false;">Pricing</a>
-  <a href="#testimonials" onclick="mobileNav('#testimonials');return false;">Testimonials</a>
+  <a href="#testimonials" onclick="mobileNav('#testimonials');return false;">Reviews</a>
   <a href="#about"        onclick="mobileNav('#about');return false;">About</a>
   <a href="#contact"      onclick="mobileNav('#contact');return false;">Contact</a>
   <a href="tel:4372160426" onclick="closeMenu();" style="color:var(--gold);font-size:1rem !important;letter-spacing:.04em;">437-216-0426</a>
@@ -985,9 +1011,9 @@
         Media That Sells
       </h1>
       <div class="hero-btns" style="animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .55s both;">
-        <a href="#portfolio"  class="btn-gold">View Portfolio</a>
+        <a href="#portfolio"  class="btn-gold">Portfolio</a>
         <a href="#pricing"    class="btn-ghost">Pricing</a>
-        <a href="#contact"    class="btn-ghost">Contact Now</a>
+        <a href="#contact"    class="btn-ghost">Contact</a>
       </div>
       <div class="hero-info-bar" style="animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .72s both;">
         <div class="hero-info-pill"><span class="pill-dot"></span>24hr Turnaround</div>
@@ -1293,9 +1319,9 @@
   <div class="section-wrap">
     <div class="section-header">
       <div class="section-eyebrow reveal">
-        <div class="gold-bar"></div><span class="label">Client Reviews</span><div class="gold-bar"></div>
+        <div class="gold-bar"></div><span class="label">Reviews</span><div class="gold-bar"></div>
       </div>
-      <h2 class="section-h2 reveal d1">What Realtors <span>Say About Us</span></h2>
+      <h2 class="section-h2 reveal d1">What Realtors <span>Say About</span> <img src="brand_assets/WHITEEE%20UP%20STU%20NO%20BACKGROUND.png" alt="Up Studios" style="height:.82em;width:auto;vertical-align:middle;opacity:.88;display:inline-block;margin-left:.1em;position:relative;top:-.05em;"></h2>
       <p class="section-sub reveal d2">Trusted by top-producing agents across the GTA.</p>
     </div>
     <div class="tgrid reveal d2">
@@ -1408,15 +1434,32 @@
       <span style="color:var(--gold);">✦</span>
     </div>
 
+    <!-- REFERRAL PROGRAM -->
+    <div class="referral-banner reveal d3">
+      <div class="referral-inner">
+        <div class="referral-body">
+          <div class="referral-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="referral-eyebrow">Referral Program</div>
+            <div class="referral-headline">Refer a Realtor — You Both Save $50</div>
+            <p class="referral-sub">When you refer a colleague, both of you receive $50 off. The referred client simply includes your name and email when submitting their inquiry.</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn-ghost" style="font-size:.6rem;letter-spacing:.16em;white-space:nowrap;flex-shrink:0;">Refer Someone</a>
+      </div>
+    </div>
+
     <!-- BUNDLES -->
     <div class="pricing-section reveal">
       <div class="pricing-section-title"><div class="gold-bar"></div><h3>Bundle Packages</h3></div>
       <div class="pkg-grid">
 
-        <!-- ESSENTIAL -->
+        <!-- PREMIUM -->
         <div class="pkg-card">
-          <div class="pkg-eyebrow">Essential Bundle</div>
-          <div class="pkg-name">Essential</div>
+          <div class="pkg-eyebrow">Premium Bundle</div>
+          <div class="pkg-name">Premium</div>
           <div class="pkg-desc">Core media package for any listing</div>
           <ul class="pkg-features">
             <li class="feat-yes"><span class="feat-icon">&#10003;</span>HDR Photography</li>
@@ -1446,11 +1489,11 @@
           </div>
         </div>
 
-        <!-- PREMIUM (FEATURED) -->
+        <!-- LUXURY (FEATURED) -->
         <div class="pkg-card featured">
           <div class="pkg-badge">Most Popular</div>
-          <div class="pkg-eyebrow">Premium Bundle</div>
-          <div class="pkg-name">Premium</div>
+          <div class="pkg-eyebrow">Luxury Bundle</div>
+          <div class="pkg-name">Luxury</div>
           <div class="pkg-desc">Full media package with floor plans</div>
           <ul class="pkg-features">
             <li class="feat-yes"><span class="feat-icon">&#10003;</span>HDR Photography</li>
@@ -1480,10 +1523,10 @@
           </div>
         </div>
 
-        <!-- LUXURY -->
+        <!-- SIGNATURE -->
         <div class="pkg-card">
-          <div class="pkg-eyebrow">Luxury Bundle</div>
-          <div class="pkg-name">Luxury</div>
+          <div class="pkg-eyebrow">Signature Bundle</div>
+          <div class="pkg-name">Signature</div>
           <div class="pkg-desc">The complete media suite for premium listings</div>
           <ul class="pkg-features">
             <li class="feat-yes"><span class="feat-icon">&#10003;</span>HDR Photography</li>
@@ -1638,7 +1681,7 @@
         </div>
       </div>
       <div style="margin-top:1.4rem;padding:1rem 1.4rem;border:1px solid rgba(184,155,114,.14);background:rgba(184,155,114,.03);">
-        <p style="color:rgba(255,255,255,.38);font-size:.74rem;line-height:1.65;">All commercial engagements are scoped individually. Reach out with your project details and we'll put together a tailored proposal.</p>
+        <p style="color:rgba(255,255,255,.38);font-size:.74rem;line-height:1.65;">Every commercial project is customized to your scope and production needs. Share your details and we'll put together a tailored proposal.</p>
       </div>
     </div>
 
@@ -1647,17 +1690,17 @@
       <div class="pricing-section-title"><div class="gold-bar"></div><h3>Event Photography</h3></div>
       <div class="event-grid">
         <div class="event-card">
-          <div class="event-card-name">Essential</div>
+          <div class="event-card-name">Premium</div>
           <div class="event-card-price">From $300</div>
           <div class="event-card-desc">45–60 min, group and couple photos, light candid, 75–100 edited photos delivered</div>
         </div>
         <div class="event-card">
-          <div class="event-card-name">Standard Coverage</div>
+          <div class="event-card-name">Luxury</div>
           <div class="event-card-price">From $425</div>
           <div class="event-card-desc">1.5 hr session, group and individual portraits, 150–200 edited photos delivered</div>
         </div>
         <div class="event-card">
-          <div class="event-card-name">Premium Coverage</div>
+          <div class="event-card-name">Signature</div>
           <div class="event-card-price">From $600</div>
           <div class="event-card-desc">Up to 2 hrs, extended candid, group and portrait photography, 200–300+ edited photos delivered</div>
         </div>
@@ -1695,8 +1738,7 @@
 
     <div class="reveal" style="text-align:center;padding:1.75rem 0 .25rem;border-top:1px solid rgba(255,255,255,.05);margin-top:1.5rem;">
       <p style="color:rgba(255,255,255,.38);font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;">Ready to elevate your listing? Let's make it happen.</p>
-      <a href="#contact" class="btn-gold" style="margin-right:.75rem;">Get a Quote</a>
-      <a href="#contact" class="btn-ghost">Contact Now</a>
+      <a href="#contact" class="btn-gold" onclick="mobileNav('#contact');return false;">Get a Quote</a>
     </div>
 
   </div>
@@ -1762,7 +1804,7 @@
           <div class="gold-bar"></div><span class="label">Get in Touch</span>
         </div>
         <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:.65rem;">
-          Let's Create Something<br><span style="color:var(--gold);">Cinematic.</span>
+          Let's Create Something<br><span style="color:var(--gold);">Together.</span>
         </h2>
         <p style="color:rgba(255,255,255,.38);font-size:.88rem;line-height:1.8;margin-bottom:2rem;">Fill out the form and we'll respond within a few hours.</p>
 
@@ -1774,22 +1816,19 @@
           <div class="form-group"><label class="form-label" for="femail">Email</label><input id="femail" type="email" class="form-control" placeholder="jane@example.com" required></div>
           <div class="form-group"><label class="form-label" for="fphone">Phone</label><input id="fphone" type="tel" class="form-control" placeholder="437-000-0000"></div>
           <div class="form-group">
-            <label class="form-label" for="fservice">Service</label>
-            <select id="fservice" class="form-control form-select">
-              <option value="">Select a service...</option>
-              <option>Essential Bundle</option>
-              <option>Premium Bundle</option>
-              <option>Luxury Bundle</option>
-              <option>HDR Photography</option>
-              <option>Cinematic Property Video</option>
-              <option>One-Take Walkthrough Reel</option>
-              <option>3D Matterport Tour</option>
-              <option>Drone Photography / Video</option>
-              <option>Social Media Reels</option>
-              <option>Event Photography</option>
-              <option>Video Editing</option>
-              <option>Custom Package</option>
-            </select>
+            <label class="form-label">Services Needed</label>
+            <div class="svc-grid">
+              <label class="svc-check"><input type="checkbox" name="service" value="Photography"><span class="svc-label">Photography</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Video"><span class="svc-label">Video</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Drone"><span class="svc-label">Drone</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Floor Plans"><span class="svc-label">Floor Plans</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Matterport"><span class="svc-label">Matterport</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Social Media"><span class="svc-label">Social Media</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Event Coverage"><span class="svc-label">Event Coverage</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Custom Package"><span class="svc-label">Custom Package</span></label>
+              <label class="svc-check"><input type="checkbox" name="service" value="Other" id="svc-other-chk" onchange="document.getElementById('svc-other-input').style.display=this.checked?'block':'none'"><span class="svc-label">Other</span></label>
+            </div>
+            <input type="text" id="svc-other-input" class="form-control" placeholder="Tell us what you're looking for..." style="display:none;margin-top:.6rem;">
           </div>
           <div class="form-group"><label class="form-label" for="faddress">Property Address <span style="opacity:.4;">(optional)</span></label><input id="faddress" type="text" class="form-control" placeholder="e.g. 123 Main St, Toronto, ON"></div>
           <div class="form-group"><label class="form-label" for="fmsg">Message</label><textarea id="fmsg" class="form-control" placeholder="Tell us about your listing and what you need..."></textarea></div>
@@ -1817,12 +1856,12 @@
         </div>
 
         <div style="margin-top:1.75rem;padding:1.4rem;border:1px solid rgba(184,155,114,.12);background:rgba(184,155,114,.02);">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;">What to Expect</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;">What to Expect</div>
           <div style="display:flex;flex-direction:column;gap:.6rem;">
-            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Response within a few hours</span></div>
-            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Shoot booked within 48 to 72 hours</span></div>
-            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Delivered next business day</span></div>
-            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.46);font-size:.79rem;">Unlimited revisions, no questions</span></div>
+            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.55);font-size:.84rem;">Response within a few hours</span></div>
+            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.55);font-size:.84rem;">Shoot booked within 48 to 72 hours</span></div>
+            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.55);font-size:.84rem;">Delivered next business day</span></div>
+            <div style="display:flex;align-items:center;gap:.65rem;"><div style="width:4px;height:4px;background:var(--gold);flex-shrink:0;border-radius:50%;"></div><span style="color:rgba(255,255,255,.55);font-size:.84rem;">Unlimited revisions, no questions</span></div>
           </div>
         </div>
 
