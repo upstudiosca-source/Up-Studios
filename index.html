@@ -362,6 +362,8 @@
       border:1px solid rgba(255,255,255,.06);
       overflow:hidden;
       cursor:pointer;
+      touch-action:manipulation;
+      -webkit-tap-highlight-color:transparent;
       transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, border-color .35s ease;
     }
     .vid-card:hover {
@@ -720,6 +722,8 @@
       #contact .contact-grid { grid-template-columns:1fr !important; gap:3rem !important; }
       #contact .form-name-row { grid-template-columns:1fr !important; }
       .vid-modal-inner { width:min(340px,92vw); }
+      /* On touch devices, hidden overlay buttons must not intercept taps */
+      .vid-unmute-btn, .vid-fs-btn { pointer-events:none !important; }
       /* A la carte: tighter padding and hide verbose descriptions on tablet/mobile */
       .ac-table thead th, .ac-table tbody td { padding:.6rem .7rem; }
       .ac-desc { display:none; }
@@ -1059,7 +1063,7 @@
   <div class="section-wrap">
     <div class="section-header">
       <div class="section-eyebrow reveal">
-        <div class="gold-bar"></div><span class="label">Cinematic Video</span><div class="gold-bar"></div>
+        <div class="gold-bar"></div><span class="label">Video Portfolio</span><div class="gold-bar"></div>
       </div>
       <h2 class="section-h2 reveal d1">Cinematic <span>Video Work</span></h2>
       <p class="section-sub reveal d2">Cinematic reels and property videos shot across the GTA. Click any card to watch.</p>
@@ -1165,7 +1169,7 @@
 
   <div class="section-wrap">
     <div class="reveal" style="display:flex;justify-content:center;padding:3.5rem 0 0;">
-      <a href="#pricing" class="btn-gold">View Pricing</a>
+      <a href="#pricing" class="btn-gold" onclick="mobileNav('#pricing');return false;">View Pricing</a>
     </div>
   </div>
 
@@ -1192,7 +1196,7 @@
   <div class="section-wrap">
     <div class="section-header">
       <div class="section-eyebrow reveal">
-        <div class="gold-bar"></div><span class="label">Our Work</span><div class="gold-bar"></div>
+        <div class="gold-bar"></div><span class="label">Photography Portfolio</span><div class="gold-bar"></div>
       </div>
       <h2 class="section-h2 reveal d1">Luxury Real Estate <span>Photography</span></h2>
       <p class="section-sub reveal d2">Every property tells a story. Here's how we tell it.</p>
@@ -1442,7 +1446,7 @@
             <p class="referral-sub">When you refer a colleague, both of you receive $50 off. The referred client simply includes your name and email when submitting their inquiry.</p>
           </div>
         </div>
-        <a href="#contact" class="btn-ghost" style="font-size:.6rem;letter-spacing:.16em;white-space:nowrap;flex-shrink:0;">Refer Someone</a>
+        <a href="#contact" class="btn-ghost" style="font-size:.6rem;letter-spacing:.16em;white-space:nowrap;flex-shrink:0;" onclick="mobileNav('#contact');return false;">Refer Someone</a>
       </div>
     </div>
 
@@ -2029,7 +2033,9 @@
   }
   function mobileNav(target) {
     closeMenu();
-    setTimeout(function() { lenis.scrollTo(target, { duration: 1.0 }); }, 80);
+    setTimeout(function() {
+      lenis.scrollTo(target, { duration: 1.0, offset: -72 });
+    }, 80);
   }
 
   // ─── REVEAL ON SCROLL ──────────────────────────────────────────────────────
@@ -2239,6 +2245,27 @@
       });
     }
   });
+
+  // ─── VIDEO CARDS - MOBILE TAP HANDLER (bypasses Lenis touch interference) ──
+  (function() {
+    if (!('ontouchstart' in window)) return;
+    var cards = document.querySelectorAll('.vid-card');
+    cards.forEach(function(card, idx) {
+      var sx = 0, sy = 0;
+      card.addEventListener('touchstart', function(e) {
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+      }, { passive: true });
+      card.addEventListener('touchend', function(e) {
+        var dx = Math.abs(e.changedTouches[0].clientX - sx);
+        var dy = Math.abs(e.changedTouches[0].clientY - sy);
+        if (dx < 12 && dy < 12) {
+          e.preventDefault(); // block synthetic click to avoid double-fire
+          openVid(idx);
+        }
+      }, { passive: false });
+    });
+  })();
 
   // ─── VIDEO CAROUSEL MODAL ─────────────────────────────────────────────────
   const vidModal = document.getElementById('vid-modal');
